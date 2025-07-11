@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-calculator",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-std=c17",
+                "-g",
+                "-Iinclude",
+                "src/main.c",
+                "src/calculator.c",
+                "-o",
+                "bin/calculator"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Build scientific calculator"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "build/*",
+                "bin/*"
+            ],
+            "group": "build"
+        }
+    ]
+}
